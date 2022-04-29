@@ -1,0 +1,33 @@
+def ArrayChallenge(arr):
+  
+  mode = {}
+  # Dizideki elemanların her birinin modunu bulma
+  for i in arr:
+    mode.setdefault(i,0)
+    mode[i]+=1
+  highfreq=max(mode.values())
+  
+
+  #dizinin modu 1 ise 
+  if highfreq == 1:
+    return -1
+  
+  highfreqlist=[]
+  for i, mode in mode.items():
+    if mode == highfreq:
+      highfreqlist.append(i)
+
+  # en çok tekrar eden sayıların listesi
+  #print(highfreqlist)
+
+  # Mod listesinin ilk elemanını alma 
+  for i in arr:
+    if i in highfreqlist:
+      return i
+  
+  
+ 
+
+# keep this function call here 
+print(ArrayChallenge(input()))
+
